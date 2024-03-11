@@ -1,0 +1,38 @@
+class Aluno{
+    nome:string
+    cursos:Curso[] = []
+
+    constructor(nome:string){
+        this.nome=nome
+    }
+    //arrow function
+    contratar = (curso:Curso) => this.cursos.push(curso)
+    
+    historico():void{
+        for(const i in this.cursos){
+            console.log(this.cursos[i])
+        }
+    }
+}
+
+class Curso{
+    nome:string
+    qtdMaterias:number
+    //listaMaterias:St
+    
+    constructor(nome:string,qtd:number){
+        this.nome=nome
+        this.qtdMaterias=qtd
+    }
+}
+
+var gabriel = new Aluno("Gabriel")
+var guilherme = new Aluno("Guilherme")
+var pedro = new Aluno("Pedro")
+
+var bb=new Curso("BB", 15)
+var brb=new Curso("BRB", 12)
+var caixa=new Curso("Caixa", 17)
+
+pedro.contratar(caixa)
+pedro.historico()
