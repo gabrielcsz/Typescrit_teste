@@ -1,0 +1,32 @@
+//var msg: String = "hello world"
+//console.log(msg)
+class Usuario{
+    name:string;
+    constructor(name:string){
+        this.name=name;
+    }
+    perfil(): void{
+        console.log('Nome do usuario ${this.name}');
+    }
+}
+//let user:Usuario = new Usuario('Gabriel');
+//user.perfil();
+
+var a:number = 10;
+
+class Escopo{
+
+    a:number = 100;
+    static a = 50;
+
+    imprimir():void{
+        var a = 1000;
+        console.log(a)
+        console.log(Escopo.a)
+        console.log(this.a)
+    }
+}
+
+var esc:Escopo = new Escopo();
+esc.imprimir()
+console.log(a)
